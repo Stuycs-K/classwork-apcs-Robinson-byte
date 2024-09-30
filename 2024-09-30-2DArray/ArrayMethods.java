@@ -38,10 +38,22 @@ public class ArrayMethods {
     return arrayConvert;
   }
 
+  public static int ary2DSum(int[][] nums) {
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        sum += nums[i][j];
+      }
+    }
+    return sum;
+  }
+
   public static void main(String[] args) {
     // array 2D sum test cases
     // System.out.println(arr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
     // System.out.println(arr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
+
+    // aryToString for 2d tests
     System.out.println(aryToString(new int[][] {{1, 2}, {4, 5}, {6, 7}}));
   }
 }
