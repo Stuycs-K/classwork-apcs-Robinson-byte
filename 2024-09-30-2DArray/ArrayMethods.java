@@ -3,7 +3,7 @@
 
 public class ArrayMethods {
 
-  public static String aryToString(int[]nums){
+  public static String arrToString(int[]nums){
     String arrayConvert= "[";
     for (int i = 0; i< nums.length; i++){
       arrayConvert+=nums[i];
@@ -15,30 +15,19 @@ public class ArrayMethods {
     return arrayConvert;
   }
 
-  public static String aryToString(int[][] nums){
+  public static String arrToString(int[][] nums){
     String arrayConvert= "[";
     for (int i = 0; i< nums.length; i++){
-      for(int j = 0; j<nums[i].length;j++){
-        if (j==0){
-          arrayConvert+="[";
-        }
-        arrayConvert+=nums[i][j];
-        if (j==nums[i].length-1){
-          arrayConvert+="]";
-        }
-        if(j<nums[i].length-1){
-          arrayConvert+=", ";
-        }
-      }
-      if(i<nums.length-1){
-        arrayConvert+=", ";
+      arrayConvert += arrToString(nums[i]);
+      if (i<nums.length-1){
+        arrayConvert+= ", ";
       }
     }
     arrayConvert+="]";
     return arrayConvert;
   }
 
-  public static int ary2DSum(int[][] nums) {
+  public static int arr2DSum(int[][] nums) {
     int sum = 0;
     for (int i = 0; i < nums.length; i++) {
       for (int j = 0; j < nums[i].length; j++) {
@@ -59,17 +48,18 @@ public class ArrayMethods {
     }
     return swapped;
   }
+  
 
   public static void main(String[] args) {
     // array 2D sum test cases
-    System.out.println(arr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
+    System.out.println(arrr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
     System.out.println(arr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
 
-    // aryToString for 2d tests
-    System.out.println(aryToString(new int[][] {{1, 2}, {4, 5}, {6, 7}}));
+    // arrToString for 2d tests
+    System.out.println(arrToString(new int[][] {{1, 2}, {4, 5}, {6, 7}}));
 
     //swapRC tests
     int[][] result = swapRC(new int[][]{{1, 2, 3},{4, 5, 6}});
-    System.out.println(aryToString(result));
+    System.out.println(arrToString(result));
   }
 }
