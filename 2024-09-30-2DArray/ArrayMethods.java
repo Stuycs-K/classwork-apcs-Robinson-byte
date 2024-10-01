@@ -52,14 +52,22 @@ public class ArrayMethods {
 
   public static void main(String[] args) {
     // array 2D sum test cases
-    System.out.println(arrr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
     System.out.println(arr2DSum(new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) == 45);
+    System.out.println(arr2DSum(new int[][] {{-15, -30,  -4}, {-5, -1, -23}, {-13, -2, -7}}) == -100);
+    System.out.println(arr2DSum(new int[][] {{16, 14}, {32}, {812}}) == 874);
 
     // arrToString for 2d tests
     System.out.println(arrToString(new int[][] {{1, 2}, {4, 5}, {6, 7}}));
+    System.out.println(arrToString(new int[][] {{}}));
+    System.out.println(arrToString(new int[][] {{1, 2, 3}, {4, 5}, {6}}));
 
     //swapRC tests
     int[][] result = swapRC(new int[][]{{1, 2, 3},{4, 5, 6}});
+    int[][] result1 = swapRC(new int[][]{{1, 2},{4, 5},{7, 8}});
+    int[][] result2 = swapRC(new int[][]{{1, 2}});
     System.out.println(arrToString(result));
+    System.out.println(arrToString(result1));
+    System.out.println(arrToString(result2));
+
   }
 }
