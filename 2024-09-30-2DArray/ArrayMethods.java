@@ -49,6 +49,20 @@ public class ArrayMethods {
     return swapped;
   }
   
+    public static void replaceNegative(int [][] vals) {
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          if (i == j) {
+            vals[i][j] = 1;
+          }
+          else {
+            vals[i][j] = 0;
+          }
+        }
+      }
+    }
+  }
 
   public static void main(String[] args) {
     // array 2D sum test cases
@@ -68,6 +82,18 @@ public class ArrayMethods {
     System.out.println(arrToString(result));
     System.out.println(arrToString(result1));
     System.out.println(arrToString(result2));
+
+    // replaceNegative tests
+    int[][] test1 = new int[][] {{9, -2, -65},
+                                 {-9, -6, 92}};
+    replaceNegative(test1);
+    System.out.println(arrToString(test1));
+
+    test1 = new int[][] {{-9, -2, -65},
+                                 {-9, -6, 92},
+                                 {-8, 732, -6}};
+    replaceNegative(test1);
+    System.out.println(arrToString(test1));
 
   }
 }
