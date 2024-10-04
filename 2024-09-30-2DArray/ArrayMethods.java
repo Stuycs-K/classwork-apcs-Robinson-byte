@@ -49,7 +49,7 @@ public class ArrayMethods {
     return swapped;
   }
   
-    public static void replaceNegative(int [][] vals) {
+  public static void replaceNegative(int [][] vals) {
     for (int i = 0; i < vals.length; i++) {
       for (int j = 0; j < vals[i].length; j++) {
         if (vals[i][j] < 0) {
@@ -62,6 +62,17 @@ public class ArrayMethods {
         }
       }
     }
+  }
+
+  public static int[][]copy(int[][]nums){
+    int [][] copied2D = new int[nums.length][];
+    for (int i = 0; i< nums.length; i++){
+      copied2D[i]= new int[nums[i].length];
+      for (int j=0;j<nums[i].length; j++){
+        copied2D[i][j] = nums[i][j];
+      }
+    }
+    return copied2D;
   }
 
   public static void main(String[] args) {
@@ -95,5 +106,11 @@ public class ArrayMethods {
     replaceNegative(test1);
     System.out.println(arrToString(test1));
 
+    // copy tests
+    int[][] original = {{1,2,3},{4,5,6},{7,8,9}};
+    int[][] copied = copy(original);
+
+    System.out.println("Original: " + arrToString(original));
+    System.out.println("Copied: " +arrToString(copied));  
   }
 }
