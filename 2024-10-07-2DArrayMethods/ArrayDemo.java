@@ -29,6 +29,9 @@ public class ArrayDemo{
     int[][] swappedArray = swapRC(twoDArray);
     System.out.println("Swapped 2D array: " + arrToString(swappedArray));
 
+    int[][] htmlTest = {{1,2,3},{4,5,6},{7,8,9}};
+    System.out.println("Html table: " + htmlTable(htmlTest));
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -143,6 +146,15 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String html = "<table>";
+    for (int i = 0; i<nums.length;i++){
+        html += "<tr>";
+        for (int j = 0; j<nums.length; j++){
+            html += "<td>" + nums[i][j] + "</td>";
+        }
+        html += "</tr>";
+    }
+    html += "</table>";
+    return html;
   }
 }
