@@ -5,15 +5,38 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+    int[] oneDArray = {1,2,3,4,5,6,7};
+    System.out.println("Personal arrToString for 1D: " + arrToString(oneDArray));
+    System.out.println("Systems Arrays.toString: " + Arrays.toString(oneDArray));
+
+    int[][] twoDArray = {{1,2,3},{4,5,6},{7,8,9}};
+    System.out.println("Personal arrToString for 2D: " + arrToString(twoDArray));
+    System.out.println("Sum of 2D array: " + arr2DSum(twoDArray));
+
+    int[][] negativeArray = {{-1,-2,-3},{-4,5,6},{7,-8,-9}};
+    System.out.println("Array before replaceing the negatives: " + arrToString(negativeArray));
+    replaceNegative(negativeArray);
+    System.out.println("Array after replacing the negatives: " + arrToString(negativeArray));
+
+    int[][] testForCopiedArray = {{1,2,3},{4,5,6}};
+    int[][] copiedArray= copy(testForCopiedArray);
+    System.out.println("Test 2D array: " + arrToString(testForCopiedArray));
+    System.out.println("Copied 2D array: " + arrToString(copiedArray));
+    testForCopiedArray[0][1] = 3;
+    System.out.println("Changed Test 2D array: " + arrToString(testForCopiedArray));
+    System.out.println("Copied 2D array: " + arrToString(copiedArray));
+
+    int[][] swappedArray = swapRC(twoDArray);
+    System.out.println("Swapped 2D array: " + arrToString(swappedArray));
 
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
     String arrayConvert= "[";
-    for (int i = 0; i< nums.length; i++){
-      arrayConvert+=nums[i];
-      if(i<nums.length-1){
+    for (int i = 0; i< ary.length; i++){
+      arrayConvert+=ary[i];
+      if(i<ary.length-1){
         arrayConvert+=", ";
       }
     }
@@ -26,9 +49,9 @@ public class ArrayDemo{
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]ary){
     String arrayConvert= "[";
-    for (int i = 0; i< nums.length; i++){
-      arrayConvert += arrToString(nums[i]);
-      if (i<nums.length-1){
+    for (int i = 0; i< ary.length; i++){
+      arrayConvert += arrToString(ary[i]);
+      if (i<ary.length-1){
         arrayConvert+= ", ";
       }
     }
@@ -38,7 +61,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int zeroCount = 0; 
+    for (int i= 0; i<nums.length; i++){
+        for (int j = 0; i<nums[i].length;j++){
+            if (nums[i][j]==0){
+                zeroCount++;
+            }
+        }
+    }
+    return zeroCount;
   }
 
   //2. Calculate the sum of a 2d array
