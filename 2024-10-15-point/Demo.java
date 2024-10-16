@@ -1,11 +1,6 @@
 public class Demo{
-
-  /*
-  Write this method third. Test it then move on
-  to the others.
-  */
   public static double distance(Point a, Point b){
-    return 0.0;
+    return Math.sqrt(Math.pow(b.getX()-a.getX(),2)+Math.pow(b.getY()-a.getY(),2));
   }
 
   public static void main(String[]args){
