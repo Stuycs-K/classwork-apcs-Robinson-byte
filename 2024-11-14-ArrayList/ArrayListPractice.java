@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 public class ArrayListPractice{
   public static void main(String[] args){
@@ -32,6 +31,16 @@ public class ArrayListPractice{
     System.out.println(rarr3);
     System.out.println(rarr4);
 
+    ArrayList<String> marr1 = createRandomArray(8);
+    ArrayList<String> marr2 = createRandomArray(10);
+    ArrayList<String> mixed = mixLists(marr1,marr2);
+    System.out.println("First array: " + marr1);
+    System.out.println("Second array: " + marr2);
+    System.out.println("Mixed array: " + mixed);
+    ArrayList<String> emptyMixed = mixLists(arr3,arr4);
+    System.out.println("Array 3: "+arr3);
+    System.out.println("Array 4: "+arr4);
+    System.out.println("Mixed array (empty replacing): " + emptyMixed);
 }
 
   public static ArrayList<String>createRandomArray(int size){
@@ -69,18 +78,19 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
   }
 
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
-    ArrayList<String> combined = new ArrayList<String>(a.size() + b.size());
-    for(int i = 0; i < Math.min(a.size(), b.size()); i++){
+    ArrayList<String> combined = new ArrayList<String>();
+    int max = Math.max(a.size(),b.size());
+    for(int i = 0; i < max; i++){
+      if (i<a.size()){
       combined.add(a.get(i));
-      combined.add(b.get(i));
-      if (i == a.size()-1){
-        // combined.add(b)
+      }
+      if (i<b.size()){
+        combined.add(b.get(i));
       }
     }
+    return combined;
+  }
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
-  }
 }
-ArrayListPractice.java
-Displaying ArrayListPractice.java.
