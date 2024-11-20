@@ -9,7 +9,7 @@ public class Adventday1{
         Scanner scanner = new Scanner(file);
         String instructions = scanner.nextLine();
         scanner.close();
-        System.out.println (distance(instructions));
+        System.out.println (calculateDistance(instructions));
     }
     catch(FileNotFoundException e){
       System.out.println("File not found");
@@ -17,20 +17,20 @@ public class Adventday1{
   }
 
   public static int calculateDistance(String input){
-    String steps = instructions.split(", ");
+    String[] steps = input.split(", ");
     int x =0;
     int y = 0;
     int directions = 0; //0 N; 1 E; 2 S; 3 W;
 
     for(String step: steps){
       char turn = step.charAt(0);
-      int distance = Integer.parseInt(step.substring(0));
+      int distance = Integer.parseInt(step.substring(1));
 
       if(turn == 'R'){
-        direction = (directions + 1)%4;
+        directions = (directions + 1)%4;
       }
       else if (turn == 'L'){
-        direction = (directions + 3)%4;
+        directions = (directions + 3)%4;
       }
       switch(directions){
         case 0: y+= distance; break;
