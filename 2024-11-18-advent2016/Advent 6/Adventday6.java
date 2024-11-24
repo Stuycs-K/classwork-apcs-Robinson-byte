@@ -19,4 +19,17 @@ public class Adventday6 {
             System.out.println("Error");
         }
     }
+    public static errorMessage(List <String> messages){
+        int length = messages.get(0).length();
+        StringBuilder correctedMessage = new StringBuilder();
+
+        for(int i = 0; i< length; i++){
+            Map<Characeter,Integer> letterCount = new HashMap<>();
+            for(String message : messages){
+                char c = message.charAt(i);
+                counts.put(c,counts.get(c)+1);
+            }
+            char mostCharacter = counts.
+        }
+    }
 }
