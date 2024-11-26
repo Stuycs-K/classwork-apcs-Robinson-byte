@@ -26,6 +26,12 @@ public class Adventday4{
             String name = String.join("", Arrays.copyOf(parts, parts.length -1));
             String checkSum = parts[parts.length-1];
             int ID = Integer.parseInt(checkSum.replaceAll("\\D",""));
+            String check = checkSum.replaceAll(".*\\[|\\]","");
+
+            Map<Character,Integer> count = new Hash<>();
+            for (char c: name.toCharArray()){
+                count.put(c,count.getOrDefault(c,0)+1)
+            }
 
         }
     } 
