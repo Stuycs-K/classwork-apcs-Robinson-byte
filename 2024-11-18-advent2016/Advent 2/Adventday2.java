@@ -22,22 +22,30 @@ public class Adventday2{
         }
     }
     public static String bathroomCode(String [] instructions){
-        int [][] keypad ={
-            {1,2,3},
-            {4,5,6},
-            {7,8,9},
+        Character [][] keypad ={
+            {null, null, '1', null, null},
+            {null, '2', '3', '4', null},
+            {'5', '6', '7', '8', '9'},
+            {null, 'A', 'B', 'C', null},
+            {null, null, 'D', null, null}
         };
-        int x = 1;
-        int y = 1;
+        int x = 2;
+        int y = 0;
         StringBuilder code = new StringBuilder();
 
         for(String line : instructions){
             for (char move: line.toCharArray()){
+                int changeX = x;
+                int changeY = y;
                 switch(move){
-                    case 'U': if (x>0) x--; break;
-                    case 'D': if (x<2) x++; break;
-                    case 'L': if (y>0) y--; break;
-                    case 'R': if (y<2) y++; break;
+                    case 'U': changeX = x -1; break;
+                    case 'D': changeX = x +1; break;
+                    case 'L': changeY = y -1; break;
+                    case 'R': changeY = y +1; break;
+                }
+                if (changeX >= 0 && changeX < 5 && changeY >= 0 && changeY < 5 && keypad[changeX][changeY] != null) {
+                    x = changeX;
+                    y= changeY;
                 }
             }
             code.append(keypad[x][y]);
