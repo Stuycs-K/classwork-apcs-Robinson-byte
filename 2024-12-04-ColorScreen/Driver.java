@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Driver{
+    public static void main(String[] args){
     System.out.print(Text.CLEAR_SCREEN);
     System.out.print(Text.HIDE_CURSOR);
 
@@ -12,7 +13,7 @@ public class Driver{
 
     separate();
 
-    drawMiddle();
+    // drawMiddle();
 
     Text.go(31,0);
     System.out.println(Text.RESET);
@@ -55,7 +56,7 @@ public static int[] generateRandom(int count){
 }
 
 public static void displayRandomNumbers(int[] numbers){
-    int start = 15;
+    int start = 20;
     int space = 20;
     Text.go(2,start);
     for(int i = 0; i< numbers.length;i++){
@@ -71,10 +72,11 @@ public static void displayRandomNumbers(int[] numbers){
     }
 }
 
-public static void separate{
-    Text.color(Text.BRIGHT,Text,YELLOW,Text.background(Text.BLACK));
+public static void separate(){
+    Text.color(Text.BRIGHT,Text.MAGENTA,Text.background(Text.YELLOW));
     Text.go(3,2);
     for(int i = 2; i<80; i++){
         System.out.print("▤");
     }
+}
 }
