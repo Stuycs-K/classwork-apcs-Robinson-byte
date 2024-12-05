@@ -8,7 +8,7 @@ public class Driver{
 
     int[] randomNumbers = generateRandom(3);
 
-    displayRandomNumers(randomNumbers);
+    displayRandomNumbers(randomNumbers);
 
     separate();
 
@@ -52,4 +52,21 @@ public static int[] generateRandom(int count){
         numbers[i]=random.nextInt(100);
     }
     return numbers;
+}
+
+public static void displayRandomNumbers(int[] numbers){
+    int start = 15;
+    int space = 20;
+    Text.go(2,start);
+    for(int i = 0; i< numbers.length;i++){
+        if(numbers[i]<25){
+            Text.color(Text.BRIGHT, Text.RED);
+        } else if(numbers[i]>75){
+            Text.color(Text.BRIGHT,Text.GREEN);
+        }else{
+            Text.color(Text.WHITE);
+        }
+        System.out.print(numbers[i]);
+        Text.go(2,start+(i+1)* space);
+    }
 }
