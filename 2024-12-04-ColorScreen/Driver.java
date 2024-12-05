@@ -70,3 +70,11 @@ public static void displayRandomNumbers(int[] numbers){
         Text.go(2,start+(i+1)* space);
     }
 }
+
+public static void separate{
+    Text.color(Text.BRIGHT,Text,YELLOW,Text.background(Text.BLACK));
+    Text.go(3,2);
+    for(int i = 2; i<80; i++){
+        System.out.print("▤");
+    }
+}
