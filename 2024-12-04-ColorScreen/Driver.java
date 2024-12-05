@@ -44,3 +44,12 @@ public static void drawScreen(){
     Text.go(30,80);
     System.out.print("◼");
 }
+
+public static int[] generateRandom(int count){
+    Random random = new Random();
+    int[] numbers = new int[count];
+    for(int i = 0; i<count; i++){
+        numbers[i]=random.nextInt(100);
+    }
+    return numbers;
+}
