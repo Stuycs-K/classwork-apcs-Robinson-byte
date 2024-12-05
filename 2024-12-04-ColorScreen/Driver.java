@@ -13,7 +13,7 @@ public class Driver{
 
     separate();
 
-    // drawMiddle();
+    drawMiddle();
 
     Text.go(31,0);
     System.out.println(Text.RESET);
@@ -78,5 +78,15 @@ public static void separate(){
     for(int i = 2; i<80; i++){
         System.out.print("▤");
     }
+}
+
+public static void drawMiddle(){
+    Text.go(15,40);
+    Text.color(Text.DARK,Text.GREEN,Text.background(Text.WHITE),Text.ITALICS);
+    System.out.print(" |~~~| ");
+    Text.go(16,38);
+    System.out.print(" 🐉(0~0)🐉 ");
+    Text.go(17,40);
+    System.out.print(" <---> ");
 }
 }
