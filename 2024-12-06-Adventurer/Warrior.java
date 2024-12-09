@@ -11,6 +11,12 @@ public class Warrior extends Adventurer{
     }
 
     @Override
+    public String getSpecialName(){
+        return "Rage";
+    }
+
+
+    @Override
     public int getSpecial(){
         return this.rage;
     }
@@ -36,7 +42,7 @@ public class Warrior extends Adventurer{
     @Override
     public String attack(Adventurer other){
         Random rand = new Random();
-        int damage = rand.nextln(10)+1;
+        int damage = rand.nextInt(10)+1;
         other.applyDamage(damage);
         return this.getName() + " attacks " + other.getName() + " for " + damage + " damage ";
     }
@@ -44,17 +50,17 @@ public class Warrior extends Adventurer{
     @Override
     public String support(Adventurer other){
         Random rand = new Random();
-        int heal = rand.nextln(3)+1;
-        other.setHP(Math.min(other.getHP()+heal,other.getmaxHP));
+        int heal = rand.nextInt(3)+1;
+        other.setHP(Math.min(other.getHP()+heal,other.getmaxHP()));
         return this.getName() + " supports " + other.getName() + " healing for " + heal + " HP ";
     }
 
     @Override
     public String support(){
         Random rand = new Random();
-        int heal = rand.nextln(3)+1;
-        this.setHP(Math.min(this.getHP()+heal,this.getmaxHP));
-        return this.getName() " heals themselves for " + heal + " HP ";
+        int heal = rand.nextInt(3)+1;
+        this.setHP(Math.min(this.getHP()+heal,this.getmaxHP()));
+        return this.getName() + " heals themselves for " + heal + " HP ";
     }
 
     @Override
