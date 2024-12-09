@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Warrior extends Adventurer{
-    public int rage; 
-    private final int maxRage; 
+    public int rage;
+    private final int maxRage;
 
     public Warrior(String name, int hp){
         super(name,hp);
@@ -43,6 +43,7 @@ public class Warrior extends Adventurer{
     public String attack(Adventurer other){
         Random rand = new Random();
         int damage = rand.nextInt(10)+1;
+        restoreSpecial(1);
         other.applyDamage(damage);
         return this.getName() + " attacks " + other.getName() + " for " + damage + " damage ";
     }
@@ -60,7 +61,8 @@ public class Warrior extends Adventurer{
         Random rand = new Random();
         int heal = rand.nextInt(3)+1;
         this.setHP(Math.min(this.getHP()+heal,this.getmaxHP()));
-        return this.getName() + " heals themselves for " + heal + " HP ";
+        restoreSpecial(2);
+        return this.getName() + " heals themselves for " + heal + " HP and gains 2 rage ";
     }
 
     @Override
@@ -75,4 +77,6 @@ public class Warrior extends Adventurer{
             return this.getName()+ " used a special attack on " + other.getName() + " for 15 damage";
         }
     }
+
+
 }
